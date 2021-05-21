@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>board</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="container">
+    <h2>게시글 목록</h2>
+    <table class="board_list">
+        <colgroup>
+            <col width="15%"/>
+            <col width="*"/>
+            <col width="15%"/>
+            <col width="20%"/>
+        </colgroup>
+        <thead>
+        <tr>
+            <th scope="col">글번호</th>
+            <th scope="col">제목</th>
+            <th scope="col">조회수</th>
+            <th scope="col">작성자</th>
+            <th scope="col">작성일</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="list : ${list}">
+            <td th:text="${list.boardIdx}"></td>
+            <td class="title" th:text="${list.title}"></td>
+            <td th:text="${list.hitCnt}"></td>
+            <td th:text="${list.creatorId}"></td>
+            <td th:text="${list.createdDateTime}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/board/openBoardWrite.do" class="btn">글 쓰기</a>
+</div> <!-- /container -->
+</body>
+</html>
