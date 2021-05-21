@@ -111,7 +111,7 @@ mybatis:
 
 #### 이것으로 설정 끝. 더이상의 설정으로 시간낭비하지 않길 
 
-## 개발 
+## 개발하기 (게시판 리스트 생성) 
 
 1. 데이터베이스 테이블 생성 (DATA  만들기)
 - schema :  board 
@@ -280,3 +280,4 @@ public class BoardServiceImpl implements BoardService{
 </html>
 ```
 
+#### 이와같은 방법으로 쭉 생성하면 됨 
