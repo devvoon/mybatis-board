@@ -1,6 +1,5 @@
 # README
-- this program is springboot and mybatis example
-- Spring Boot + MyBatis + MYSql
+- Spring Boot + MyBatis + MySQL
 - 2021년 5월 기준 버전 
 
 ## Environment setting
