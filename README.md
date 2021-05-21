@@ -1,6 +1,7 @@
 # README
 - this program is springboot and mybatis example
 - Spring Boot + MyBatis + MYSql
+- 2021년 5월 기준 버전 
 
 ## Environment setting
 
@@ -41,11 +42,13 @@
 - bundle.gradle 파일을 통해 프로젝트 열기 
 
 ## Cofiguration
-- build.gradle에서 필요한 라이브러리들을 주입해
-- m
+- `build.gradle`에서 필요한 라이브러리들을 주입하고 설정은 `applicaton.yml` 에서 해줌 
+- 자바로 설정파일을 만들어 준다거나 다른 설정 파일들이 전혀 필요 없음 (매우간단)
+- mybatis-spring-boot-starter가 이젠 다 알아서 해 줌 (자세한 설명은 마이바티스홈페이지에서 확인)
 
 ### 라이브러리  build.gradle
-- start.spring.io 에서 프로젝트 생성시 Dependencies에 추가를 했다면 따로 수정할 것은 없고 필요한것은 추가해서 사용 하면 됨
+- start.spring.io 에서 프로젝트 생성시 Dependencies에 추가를 했다면 따로 수정할 것은 없고 필요한 것은 추가해서 사용 하면 됨
+
 ```
 plugins {
 	id 'org.springframework.boot' version '2.4.5'
@@ -84,7 +87,7 @@ test {
 
 ```
 
-### 환경설정 applicaton. yml
+### 환경설정 applicaton.yml
 - 위치 : src/main/resources/application.yml
 - db, mybatis 를 설정
 - 설정 옵션에 대한 내용은 해당 홈페이지에서 확인하면서 자유롭게 추가 - 변경 가능  
