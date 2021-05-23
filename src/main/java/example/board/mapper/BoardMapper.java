@@ -9,4 +9,14 @@ import java.util.List;
 @Mapper
 public interface BoardMapper {
     List<BoardDto> selectBoardList() throws Exception;
+
+    void insertBoard(BoardDto boardDto) throws Exception;
+
+    void updateHitCount(int boardIdx);
+
+    BoardDto selectBoardDetail(int boardIdx);
+
+    void updateBoard(BoardDto board);
+
+    void deleteBoard(int boardIdx);
 }

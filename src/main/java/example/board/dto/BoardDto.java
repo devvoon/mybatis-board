@@ -10,7 +10,7 @@ public class BoardDto {
     private int boardIdx;
     private String title;
     private String contents;
-    private int hitCnt;
+    private int hitCount;
     private String creatorId;
     private String createdDateTime;
     private String updaterId;
