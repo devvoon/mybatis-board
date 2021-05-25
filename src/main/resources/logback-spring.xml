@@ -31,7 +31,8 @@
     <logger name="jdbc.resultsettable" level="INFO" appender-ref="STDOUT"/>
     <logger name="org.springframework" level="error"/>
     <logger name="org.springframework.jdbc" level="error"/>
-    <logger name="com.hikari.HikariConfig" level="error"/>
+    <logger name="org.thymeleaf" level="error"/>
+    <logger name="com.hikari" level="error"/>
 
     <!-- 루트 로거 -->
     <root>
