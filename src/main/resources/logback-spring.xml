@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true" scanPeriod="30 seconds" >
+
+    <!-- Appenders -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <!-- daily rollover -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>logs/board_log.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>
+                logs/board.%d{yyyy-MM-dd}.log
+            </FileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <Pattern>%d{HH:mm:ss,SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+            </layout>
+        </encoder>
+    </appender>
+
+    <!-- 로거 -->
+    <logger name="board" level="INFO" appender-ref="STDOUT"/>
+    <logger name="jdbc.sqlonly" level="INFO" appender-ref="STDOUT"/>
+    <logger name="jdbc.resultsettable" level="INFO" appender-ref="STDOUT"/>
+    <logger name="org.springframework" level="error"/>
+    <logger name="org.springframework.jdbc" level="error"/>
+    <logger name="com.hikari.HikariConfig" level="error"/>
+
+    <!-- 루트 로거 -->
+    <root>
+        <level value="DEBUG"/>
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>
