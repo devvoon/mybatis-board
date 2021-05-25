@@ -1,7 +1,9 @@
 package example.board.mapper;
 
 import example.board.dto.BoardDto;
+import example.board.dto.BoardFileDto;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,4 +21,10 @@ public interface BoardMapper {
     void updateBoard(BoardDto board);
 
     void deleteBoard(int boardIdx);
+
+    void inertBoardFileList(List<BoardFileDto> list);
+
+    List<BoardFileDto> selectBoardFileList(int boardIdx);
+
+    BoardFileDto selectBoardFileInformation(@Param("idx") int idx, @Param("boardIdx") int boardIdx);
 }
