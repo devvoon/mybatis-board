@@ -12,4 +12,9 @@ public class BoardFileDto {
     private String originalFileName;
     private String storedFilePath;
     private long fileSize;
+    private String creatorId;
+    private String createdDateTime;
+    private String updaterId;
+    private String updatedDateTime;
+    private String deletedYn;
 }
