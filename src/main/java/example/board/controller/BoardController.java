@@ -23,7 +23,7 @@ public class BoardController {
 
     private final BoardService boardService;
 
-    @RequestMapping("/board/boardList")
+    @RequestMapping("/board/openBoardList")
     public ModelAndView boardList() throws Exception{
         ModelAndView mv = new ModelAndView("board/boardList");//호출되는 html 화면
         List<BoardDto> list = boardService.selectBoardList();
@@ -31,7 +31,7 @@ public class BoardController {
         return mv;
     }
 
-    @RequestMapping("/board/boardWrite")
+    @RequestMapping("/board/openBoardWrite")
     public String boardWrite() throws Exception{
         return "/board/boardWrite";
     }
@@ -39,10 +39,10 @@ public class BoardController {
     @RequestMapping("/board/insertBoard")
     public String insertBoard(BoardDto board, MultipartHttpServletRequest multipartHttpServletRequest) throws Exception{
         boardService.insertBoard(board, multipartHttpServletRequest);
-        return "redirect:/board/boardList";
+        return "redirect:/board/openBoardList";
     }
 
-    @RequestMapping("/board/boardDetail")
+    @RequestMapping("/board/openBoardDetail")
     public ModelAndView boardDetail(@RequestParam int boardIdx) throws Exception{
         ModelAndView mv =new ModelAndView("board/boardDetail");
 
@@ -51,16 +51,16 @@ public class BoardController {
         return mv;
     }
 
-    @RequestMapping("/board/boardUpdate")
+    @RequestMapping("/board/updateBoard")
     public String boardUpdate(BoardDto board) throws Exception{
         boardService.updateBoard(board);
-        return "redirect:/board/boardList";
+        return "redirect:/board/openBoardList";
     }
 
-    @RequestMapping("/board/boardDelete")
+    @RequestMapping("/board/deleteBoard")
     public String boardDelete(int boardIdx) throws Exception{
         boardService.deleteBoard(boardIdx);
-        return "redirect:/board/boardList";
+        return "redirect:/board/openBoardList";
     }
 
     @RequestMapping("/board/downloadBoardFile")

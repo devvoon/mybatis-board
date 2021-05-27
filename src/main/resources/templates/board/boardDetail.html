@@ -57,18 +57,18 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $("#list").on("click", function(){
-                location.href = "/board/boardList";
+                location.href = "/board/openBoardList";
             });
             
             $("#edit").on("click", function(){
                 var frm = $("#form")[0];
-                frm.action = "/board/boardUpdate";
+                frm.action = "/board/updateBoard";
                 frm.submit();
             });
             
             $("#delete").on("click", function(){
                 var frm = $("#form")[0];
-                frm.action = "/board/boardDelete";
+                frm.action = "/board/deleteBoard";
                 frm.submit();
             });
         });

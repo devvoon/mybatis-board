@@ -76,7 +76,7 @@
                 board_idx
               , original_file_name
               , stored_file_path
-              , fil_size
+              , file_size
               , creator_id
               , created_datetime )
             VALUES
