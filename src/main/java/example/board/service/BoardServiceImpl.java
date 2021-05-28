@@ -5,15 +5,11 @@ import example.board.dto.BoardDto;
 import example.board.dto.BoardFileDto;
 import example.board.mapper.BoardMapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
-import org.springframework.util.ObjectUtils;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import java.util.Iterator;
 import java.util.List;
 
 @Service

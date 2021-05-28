@@ -1,9 +1,19 @@
 spring:
   datasource:
     url: jdbc:log4jdbc:mysql://localhost:3306/board?serverTimezone=UTC&characterEncoding=UTF-8
-    username: root
-    password: admin2021
+    username:
+    password: 
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: create # application 실행시점에 table drop 후  다시 create . none:은 계속 유지
+    properties:
+      hibernate:
+        #show_url: true
+        format_sql: true
+        default_batch_fetch_size: 100  #최적화 옵션
 
 mybatis:
   type-aliases-package: example.board

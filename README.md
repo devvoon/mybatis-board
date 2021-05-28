@@ -281,3 +281,22 @@ public class BoardServiceImpl implements BoardService{
 ```
 
 #### 이와같은 방법으로 쭉 생성하면 됨 
+
+
+## 파일 생성 테이블
+
+```sql
+create table file(
+	  idx int(10) unsigned not null auto_increment comment '일련번호'
+	, board_idx int(10) unsigned not null comment '게시글 번호'
+	, original_file_name varchar(255) not null comment '원본 파일 이름'
+	, stored_file_path varchar(500) not null comment '파일 저장 경로'
+	, fil_size int(12) unsigned not null comment '파일 크기'
+	, creator_id varchar(50) not null comment '작성자 아이디'
+	, created_datetime datetime not null comment '작성시간'
+	, update_id varchar(50) not null comment '작성자 아이디'
+	, updated_datetime datetime not null comment '수정시간'
+	, deleted_yn char(1) not null default 'N' comment '삭제 여부'
+	, PRIMARY key (idx)
+	)
+```
